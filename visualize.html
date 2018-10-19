@@ -15,10 +15,12 @@
 
         var headers = new Headers();
         headers.append('cache-control', 'no-store');
+        headers.append('Content-Type', 'text/plain; charset=utf-8');
 
         var fetchInit = {
               method: 'GET',
-              headers: headers
+              headers: headers,
+              mode: "no-cors"
         }
 
         async function loadVisualization() {
