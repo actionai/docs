@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Visualization</title>
+    <script>
+
+        var showAll = getParameterByName("showAll") !== null;
+        var showResponse = getParameterByName("showResponse") !== null;
+        var previousEncodedData = "";
+
+        window.onload = async function () {
+            await loadVisualization();
+        };
+
+        var headers = new Headers();
+        headers.append('cache-control', 'no-store');
+
+        var fetchInit = {
+              method: 'GET',
+              headers: headers
+        }
+
+        async function loadVisualization() {
+            const url = "https://smebanking.azurewebsites.net/visualization/visualized.html";
+
+            fetch(url + "?" + createRandomText(10), fetchInit)
+                .then(async function (response) {
+
+                    var text = await response.text();
+                    if (showResponse === true) {
+                        text = text.replace("<!--", "").replace("-->", "");
+                    }
+                    
+                    const encodedData = btoa(text);
+
+                    if (encodedData !== previousEncodedData) {
+                        previousEncodedData = encodedData;
+
+                        const element = document.getElementById("visualization");
+
+                        if (showAll) {
+                            element.innerHTML = text + element.innerHTML;
+                        }
+                        else {
+                            element.innerHTML = text;
+                        }
+                    }
+
+                    setTimeout(async function () {
+                        await loadVisualization();
+                    }, 1000);
+                });
+        }
+
+        function getParameterByName(name) {
+
+            const url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+
+            const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
+            const results = regex.exec(url);
+
+            if (!results)
+                return null;
+
+            if (!results[2])
+                return '';
+
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        function createRandomText(length) {
+           var randomText = "";
+            const possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+            for (let i = 0; i < length; i++) {
+                randomText += possible.charAt(Math.floor(Math.random() * possible.length));
+            }
+
+            return randomText;
+        }
+
+    </script>
+</head>
+
+<body style="background-color: black; font-size: 16px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; padding: 4rem 2rem;">
+    <div id="visualization"></div>
+</body>
+
+</html>
