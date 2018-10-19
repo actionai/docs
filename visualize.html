@@ -30,6 +30,7 @@
                 .then(async function (response) {
 
                     var text = await response.text();
+                alert(text);
                     if (showResponse === true) {
                         text = text.replace("<!--", "").replace("-->", "");
                     }
