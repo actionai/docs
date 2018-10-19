@@ -28,7 +28,7 @@
             fetch(url + "?" + createRandomText(10), fetchInit)
                 .then(async function (response) {
 
-                    var text = response.body;
+                    var text = await response.text();
 
                     if (showResponse === true) {
                         text = text.replace("<!--", "").replace("-->", "");
