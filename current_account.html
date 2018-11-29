@@ -1,15 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <script>
+	<meta charset="utf-8" />
+	<title>Current Account</title>
+	<style>
+		
+        body { 
+            margin-left: 25px;
+        } 
+
+        .data
+        {
+        padding: 0;
+        margin: 0;
+        border-collapse: collapse;
+        }
+
+        .data th{
+        border: 1px solid #333;
+        padding: 5px;
+        }
+
+        .blank * {
+            border-left: none !important;
+            border-right: none !important;
+        }
+
+        .data td
+        {
+        border: 1px solid #333;
+        padding: 5px;
+        }
+
+        .header td {
+            font-weight: bold;
+        }
+
+
+	</style>
+
+	<script>
         window.onload = async function () {
 
             var response = await fetch("https://bankinginfo.azurewebsites.net/api/info/currentaccount");
 
-            var html = await response.text();
+            var table = await response.text();
 
-            document.open();
-            document.write(html);
-            document.close();
+            const element = document.getElementById("data");
+
+            element.innerHTML = table;
     
         }
-        </script>
+    </script>
 </head>
+<body>
+    <div id="data"></div>
+</body>
+</html>
