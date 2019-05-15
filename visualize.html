@@ -23,9 +23,9 @@
         }
 
         async function loadVisualization() {
-            const url = "https://smebanking.azurewebsites.net/visualization/visualized.html";
+            const url = "https://visualizationhack.azurewebsites.net/api/default";
 
-            fetch(url + "?" + createRandomText(10), fetchInit)
+            fetch(url + "?key=BankingInputProcessor_visualization&v=" + createRandomText(10), fetchInit)
                 .then(async function (response) {
 
                     var text = await response.text();
@@ -54,7 +54,6 @@
                     }, 1000);
                 });
         }
-
         function getParameterByName(name) {
 
             const url = window.location.href;
