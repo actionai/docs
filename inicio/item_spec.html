@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+		<title>Item Spec</title>
+		<style>
+			ul {
+				list-style-type: ' -  '
+			}
+		</style>
+</head>
+<body>
+  <ul>
+    <li><strong>item_action</strong> - This is for an action that is performed on an expense or income, or something that the expense or income itself does to an agent.</li>
+  </ul>
+  <blockquote>
+    <p>
+      <em>I <strong>pay</strong> 500 in rent</em>
+      <em>rent <strong>costs</strong> me 500</em>
+      <em>I <strong>earn</strong> 300 a week</em>
+    </p>
+  </blockquote>
+  <ul>
+    <li><strong>item_activity</strong> - This is for something the user, or someone else, does to generate income or expenditure.</li>
+  </ul>
+  <blockquote>
+    <p><em>I&#39;ve been <strong>renting</strong> this flat for 500 a month</em></p>
+  </blockquote>
+  <ul>
+    <li><strong>item_actual</strong> - This is the basic tag for the thing the user actually says they spend their money on or earn their money from:</li>
+  </ul>
+  <blockquote>
+    <p><em><strong>rent</strong> is 500</em></p>
+  </blockquote>
+  <ul>
+    <li><strong>item_agent</strong> - This is the person (almost certainly a person) who is responsible for some income or expenditure activity.</li>
+  </ul>
+  <blockquote>
+    <p>
+      <em>my <strong>wife</strong> earns 1000 a month</em>
+      <em>my <strong>husband</strong> spends 50 a week at the pub</em>
+    </p>
+  </blockquote>
+  <ul>
+    <li><strong>item_beneficiary</strong> - This is for a person (usually not a thing) that is the target of income or expenditure.</li>
+  </ul>
+  <blockquote>
+    <p>
+      <em>I spend 50 a month on food for my <strong>kids</strong></em>
+      <em>I pay 200 towards my <strong>mum&#39;s</strong> care home bill</em>
+    </p>
+  </blockquote>
+  <ul>
+    <li><strong>item_container</strong> - This is for super-items that are expressed as having key item values as components.</li>
+  </ul>
+  <blockquote>
+    <p><em>I spend 50 on gas, as part of my <strong>utilities</strong></em></p>
+  </blockquote>
+  <ul>
+    <li><strong>item_excluded</strong> - This is for something that is explicitly mentioned as not part of an expenditure or income being expressed.</li>
+  </ul>
+  <blockquote>
+    <p><em>I spend 600 a month on rent, but that doesn&#39;t include <strong>utilities</strong></em></p>
+  </blockquote>
+  <ul>
+    <li><strong>item_from</strong> - This is for an entity from which money is received.</li>
+  </ul>
+  <blockquote>
+    <p><em>my <strong>sister</strong> chips in £50 a month for the utilities</em></p>
+  </blockquote>
+  <ul>
+    <li><strong>item_included</strong> - This is for the text that describes things that are part of an item that is the basis for income or expenditure:</li>
+  </ul>
+  <blockquote>
+    <p><em>my rent is 500 and that includes <strong>internet</strong></em></p>
+  </blockquote>
+  <ul>
+    <li><strong>item_instrument</strong> - This is for the things which facilitate making payments of getting paid.</li>
+  </ul>
+  <blockquote>
+    <p>
+      <em>I put 10 a week on the <strong>metre</strong> for electricity</em>
+      <em>I&#39;ve got a <strong>direct debit</strong> of 200 a month set up for utilities</em>
+    </p>
+  </blockquote>
+  <ul>
+    <li><strong>item_null</strong> - This is for when a user is saying they don&#39;t spend anything on an item.</li>
+  </ul>
+  <blockquote>
+    <p><em>I don&#39;t pay <strong>rent</strong></em></p>
+  </blockquote>
+  <ul>
+    <li><strong>item_object</strong> - This is a thing (not, generally, a person) that is in some sense the target of or basis for income or expenditure.</li>
+  </ul>
+  <blockquote>
+    <p>
+      <em>I&#39;ve been renting this <strong>flat</strong> for 500 a month</em>
+      <em>food for my <strong>dog</strong> costs 20 a week</em>
+    </p>
+  </blockquote>
+  <ul>
+    <li><strong>item_reason</strong> - This is for something that is either the cause or the goal of an instance of income or expenditure:</li>
+  </ul>
+  <blockquote>
+    <p>
+      <em>I don&#39;t have a wage because I&#39;m <strong>retired</strong></em>
+      <em>I have <strong>diabetes</strong> so I buy blood sugar monitors</em>
+    </p>
+  </blockquote>
+  <ul>
+    <li><strong>item_rebate</strong> - This is for a mechanism that in some sense or another scales or increments income or expenditure.</li>
+  </ul>
+  <blockquote>
+    <p>
+      <em>I make 20000 before <strong>taxes</strong></em>
+      <em>my rent is 500 a month, but the <strong>council</strong> covers part of that</em>
+    </p>
+  </blockquote>
+  <ul>
+    <li><strong>item_recipient</strong> - This is a person or entity to which money is paid.</li>
+  </ul>
+  <blockquote>
+    <p><em>I give my <strong>parents</strong> 100 a month for room and board</em></p>
+  </blockquote>
+  <ul>
+    <li><strong>item_specification</strong> - This is for things that are (possibly collectively) the entirety of the values for an item that are being expressed in an input.</li>
+  </ul>
+  <blockquote>
+    <p><em>I pay 100 for utilities, but that only covers <strong>gas</strong> and <strong>electricity</strong></em></p>
+  </blockquote>
+  <ul>
+    <li><strong>item_unsure</strong> - This is for when a user is saying they don&#39;t know what (or whether) they spend anything on a particular item.</li>
+  </ul>
+  <blockquote>
+    <p><em>I don&#39;t know what I pay on <strong>rent</strong></em></p>
+  </blockquote>
+  <ul>
+    <li><strong>item_venue</strong> - This is for the place where some income or expenditure activity happens.</li>
+  </ul>
+  <blockquote>
+    <p>
+      <em>my weekly shop at <strong>Tesco</strong> comes to 50</em>
+      <em>my meals at <strong>work</strong> cost 30 a week</em>
+    </p>
+  </blockquote>
+  <ul>
+    <li><strong>item_wrong</strong> - This is for when a user is saying that an established value for a particular item is incorrect.</li>
+  </ul>
+  <blockquote>
+    <p><em>what you have for <strong>rent</strong> is wrong</em></p>
+  </blockquote>
+
+</body>
+</html>
