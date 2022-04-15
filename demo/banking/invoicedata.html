@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Invoices</title>
+	<style>
+		
+        body { 
+            margin-left: 25px;
+        } 
+
+        .data
+        {
+        padding: 0;
+        margin: 0;
+        border-collapse: collapse;
+        }
+
+        .data th{
+        border: 1px solid #333;
+        padding: 5px;
+        }
+
+        .blank * {
+            border-left: none !important;
+            border-right: none !important;
+        }
+
+        .data td
+        {
+        border: 1px solid #333;
+        padding: 5px;
+        }
+
+        .header td {
+            font-weight: bold;
+        }
+
+
+	</style>
+
+	<script>
+        window.onload = async function () {
+
+            var response = await fetch("https://bankinginfo.azurewebsites.net/api/info/invoicedata");
+
+            var table = await response.text();
+
+            const element = document.getElementById("data");
+
+            element.innerHTML = table;
+    
+        }
+    </script>
+</head>
+<body>
+    <div id="data"></div>
+</body>
+</html>
