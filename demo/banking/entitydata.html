@@ -2,13 +2,12 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>Current Account</title>
-    <link rel="stylesheet" type="text/css" href="style.css"/>
-
+	<title>Invoices</title>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
 	<script>
         window.onload = async function () {
 
-            var response = await fetch("https://bankinginfo.azurewebsites.net/api/info/currentaccount");
+            var response = await fetch("https://bankinginfo.azurewebsites.net/api/info/entities");
 
             var table = await response.text();
 
