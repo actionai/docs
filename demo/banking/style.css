@@ -11,9 +11,10 @@ body {
 }
 
 .data th{
-    border: 1px solid darkgray;
+    border: none;
     padding: 5px;
-    background-color: darkgray;
+    color: black;
+    font-size: 1.5em;
 }
 
 .blank * {
