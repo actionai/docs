@@ -31,6 +31,10 @@ body {
     background-color: lightgray;
 }
 
+.month td {
+    background-color: lightgray;
+}
+
 .header td {
     font-weight: bold;
 }
