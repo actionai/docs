@@ -17,6 +17,12 @@ body {
     font-size: 1.5em;
 }
 
+.balance {
+    font-size: 0.9em !important;
+    font-weight: normal !important;
+    text-align: left !important;
+}
+
 .blank * {
     border-left: none !important;
     border-right: none !important;
