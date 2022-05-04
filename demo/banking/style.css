@@ -44,3 +44,7 @@ body {
 .header td {
     font-weight: bold;
 }
+
+.centered {
+    text-align: center;
+}
