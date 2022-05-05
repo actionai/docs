@@ -45,6 +45,14 @@ body {
     font-weight: bold;
 }
 
-.centered {
+.align_left {
+    text-align: left;
+}
+
+.align_middle {
     text-align: center;
+}
+
+.align_right {
+    text-align: right;
 }
