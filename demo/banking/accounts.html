@@ -6,17 +6,20 @@
     <link rel="stylesheet" type="text/css" href="../common/style.css"/>
 
 	<script>
+        let timeout = 3600000; // 1 hour in ms
         window.onload = async function () {
+            load();  
+            setInterval(load, timeout)     
+        }
 
-            // var response = await fetch("https://bankinginfo.azurewebsites.net/api/info/accounts");
-            var response = await fetch("http://localhost:54995/api/info/accounts");
+        async function load() {
+            var response = await fetch("https://bankinginfo.azurewebsites.net/api/info/accounts");
 
             var table = await response.text();
 
             const element = document.getElementById("data");
 
             element.innerHTML = table;
-    
         }
     </script>
 </head>

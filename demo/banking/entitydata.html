@@ -5,8 +5,13 @@
 	<title>Invoice Summary</title>
 	<link rel="stylesheet" type="text/css" href="../common/style.css"/>
 	<script>
+        let timeout = 3600000; // 1 hour in ms
         window.onload = async function () {
+            load();  
+            setInterval(load, timeout)     
+        }
 
+        async function load() {
             var response = await fetch("https://bankinginfo.azurewebsites.net/api/info/entities");
 
             var table = await response.text();
@@ -14,7 +19,6 @@
             const element = document.getElementById("data");
 
             element.innerHTML = table;
-    
         }
     </script>
 </head>
