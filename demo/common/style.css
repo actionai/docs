@@ -22,9 +22,14 @@ body {
     font-weight: normal !important;
 }
 
-.blank * {
+.blank {
     border-left: none !important;
     border-right: none !important;
+}
+
+.empty {
+    border-top: none !important;
+    border-bottom: none !important;
 }
 
 .data td
@@ -55,4 +60,29 @@ body {
 
 .align_right {
     text-align: right;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.thin {
+    width: 10px;
+}
+
+.filler { 
+    height: 1px;
+}
+
+.blurb {
+  font-size: 0.7em !important; 
+  font-weight: normal; 
+}
+
+.bigger {
+    font-size: 125%;
 }

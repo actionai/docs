@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>Savings Account</title>
-	<link rel="stylesheet" type="text/css" href="../common/style.css"/>
+	<title>Current Account</title>
+    <link rel="stylesheet" type="text/css" href="../common/style.css"/>
 
 	<script>
         window.onload = async function () {
 
-            var response = await fetch("https://bankinginfo.azurewebsites.net/api/info/savingsaccount");
+            // var response = await fetch("https://bankinginfo.azurewebsites.net/api/info/accounts");
+            var response = await fetch("http://localhost:54995/api/info/accounts");
 
             var table = await response.text();
 
