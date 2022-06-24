@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Invoice query result</title>
+    <link rel="stylesheet" type="text/css" href="../common/style.css"/>
+
+	<script>
+        
+        load();  
+
+        async function load() {
+            var response = await fetch("http://localhost:54995/api/info/test");
+
+            if (response.status != 200) {
+                alert("Sorry, that data isn't available");
+                return;
+            }
+            
+            var table = await response.text();
+
+            const element = document.getElementById("data");
+
+            element.innerHTML = table;
+        }
+    </script>
+</head>
+<body>
+    <div id="data"></div>
+</body>
+</html>
