@@ -23,7 +23,7 @@
                 element.innerHTML = ("Sorry, that data isn't available")
             }
 
-            var response = await fetch("http://localhost:54995/api/info/payment_query/" + id);
+            var response = await fetch("https://bankinginfo.azurewebsites.net/api/info/payment_query/" + id);
 
             if (response.status != 200) {
                 element.innerHTML = ("Sorry, that data isn't available")
