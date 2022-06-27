@@ -7,19 +7,30 @@
 
 	<script>
         
-        load();  
-
+        window.onload=function() { 
+             load();   
+        }
+       
         async function load() {
-            var response = await fetch("http://localhost:54995/api/info/test2");
+
+            const element = document.getElementById("data");
+
+            const urlParams = new URLSearchParams(window.location.search);
+
+            var id = urlParams.get('id');
+
+            if (!id) {        
+                element.innerHTML = ("Sorry, that data isn't available")
+            }
+
+            var response = await fetch("http://localhost:54995/api/info/payment_query/" + id);
 
             if (response.status != 200) {
-                alert("Sorry, that data isn't available");
+                element.innerHTML = ("Sorry, that data isn't available")
                 return;
             }
             
-            var table = await response.text();
-
-            const element = document.getElementById("data");
+            var table = await response.text();            
 
             element.innerHTML = table;
         }
