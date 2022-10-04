@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Current Account</title>
+    <link rel="stylesheet" type="text/css" href="../common/style.css"/>
+
+	<script>
+        let timeout = 3600000; // 1 hour in ms
+        window.onload = async function () {
+            load();  
+            setInterval(load, timeout)     
+        }
+
+        async function load() {
+            var response = await fetch("https://bankinginfo.azurewebsites.net/api/info/open");
+
+            var table = await response.text();
+
+            const element = document.getElementById("data");
+
+            element.innerHTML = table;
+        }
+    </script>
+</head>
+<body>
+    <div id="data"></div>
+</body>
+</html>
